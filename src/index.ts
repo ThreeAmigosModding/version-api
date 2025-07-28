@@ -34,29 +34,29 @@ export default {
         try {
             const ghRes = await fetch(githubApiUrl, {
                 headers: {
-                Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-                'User-Agent': 'ThreeAmigosVersionChecker',
-                'Accept': 'application/vnd.github+json'
+                    Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+                    'User-Agent': 'ThreeAmigosVersionChecker',
+                    'Accept': 'application/vnd.github+json'
                 }
             });
 
             if (ghRes.status === 404) {
                 return new Response(JSON.stringify({
-                error: 'Repository or release not found. Check that the resource exists and has at least one GitHub release.',
-                resource: resourceName
+                    error: 'Repository or release not found. Check that the resource exists and has at least one GitHub release.',
+                    resource: resourceName
                 }), {
-                status: 404,
-                headers: { 'Content-Type': 'application/json' }
+                    status: 404,
+                    headers: { 'Content-Type': 'application/json' }
                 });
             }
 
             if (!ghRes.ok) {
                 return new Response(JSON.stringify({
-                error: 'Failed to fetch release info from GitHub.',
-                status: ghRes.status
+                    error: 'Failed to fetch release info from GitHub.',
+                    status: ghRes.status
                 }), {
-                status: ghRes.status,
-                headers: { 'Content-Type': 'application/json' }
+                    status: ghRes.status,
+                    headers: { 'Content-Type': 'application/json' }
                 });
             }
 
@@ -69,8 +69,8 @@ export default {
                 publishedAt: data.published_at
             }), {
                 headers: {
-                'Content-Type': 'application/json',
-                'Cache-Control': 's-maxage=3600'
+                    'Content-Type': 'application/json',
+                    'Cache-Control': 's-maxage=3600'
                 }
             });
 

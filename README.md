@@ -81,10 +81,11 @@ end)
 
 1. Clone the repository
 2. Install packages (either w/ `pnpm i` or `npm i` etc)
-3. Edit `src/index.ts` and change references of `ThreeAmigosModding` to your Github username/org. 
-4. Optionally, setup a custom domain for the worker - https://developers.cloudflare.com/workers/configuration/routing/custom-domains/
- - If you aren't going to be using a custom domain, you'll need to remove the route in `wranger.jsonc`.
-5. Deploy to a Cloudflare worker via `pnpx wrangler deploy` or by going through the Cloudflare dashboard.
+3. Edit `src/index.ts` and change references of `ThreeAmigosModding` to your Github username/org.
+4. Add your Personal Access Token as a secret variable in the worker, named `GITHUB_TOKEN`. - https://developers.cloudflare.com/workers/configuration/secrets/#adding-secrets-to-your-project
+5. Optionally, setup a custom domain for the worker - https://developers.cloudflare.com/workers/configuration/routing/custom-domains/
+    - If you aren't going to be using a custom domain, you'll need to remove the route in `wranger.jsonc`.
+6. Deploy to a Cloudflare worker via `pnpx wrangler deploy` or by going through the Cloudflare dashboard.
 
 
 ## License
