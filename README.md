@@ -2,6 +2,8 @@
 
 This Cloudflare Worker provides a secure and cacheable API to check the **latest version of a FiveM resource** based on GitHub releases.
 
+This is primarily designed for private repos for escrowed resources so you don't need to expose your access token in your resources, but it works fine with public repositories too.
+
 It allows your FiveM resources to fetch version data from the github release via:
 
 ```
