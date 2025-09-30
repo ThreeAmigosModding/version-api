@@ -70,7 +70,9 @@ export default {
             }), {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Cache-Control': 's-maxage=3600'
+                    "Cache-Control": "no-transform, s-maxage=3600",
+                    "Transfer-Encoding": "chunked",
+                    "Connection": "keep-alive"
                 }
             });
 
